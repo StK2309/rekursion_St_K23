@@ -7,5 +7,6 @@ func Partition(list []int, key int) ([]int, []int) {
 	// Verwende Kopien von list, damit die ursprüngliche Liste nicht verändert wird.
 
 	// TODO
-	return []int{}, []int{}
+
+	return FilterLess(list, key), FilterGreater(list, key)
 }

@@ -5,5 +5,15 @@ package search
 // Da die Liste sortiert ist, wird die binäre Suche verwendet.
 func FindSorted(list []int, x int) int {
 	// TODO
-	return -1
+	if len(list) == 0 {
+		return -1
+	}
+	mid := len(list) / 2
+	if list[mid] == x {
+		return mid
+	}
+	if list[mid] > x {
+		return FindSorted(list[:mid], x)
+	}
+	return mid + 1 + FindSorted(list[mid+1:], x)
 }
